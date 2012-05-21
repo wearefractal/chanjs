@@ -14,24 +14,6 @@ code {
 .small-modal-box {
   width: 280px;
 }
-.big-modal {
-  height: 700px;
-}
-
-/*
-.sidebar-nav {
-  padding: 9px 0;
-}
-*/
-
-.big-modal .modal-body {
-  height: 596px;
-  padding: 0px;
-  max-height: none;
-}
-.edit-editable {
-  height: 596px;
-}
 
 .crop {
   overflow: hidden;

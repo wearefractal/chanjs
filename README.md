@@ -1,14 +1,14 @@
-![status](https://secure.travis-ci.org/wearefractal/smog.png?branch=master)
+![status](https://secure.travis-ci.org/wearefractal/chanjs.png?branch=master)
 
 ## Information
 
 <table>
 <tr> 
-<td>Package</td><td>smog</td>
+<td>Package</td><td>chanjs</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>HTML5/Node/WebSocket MongoDB viewer</td>
+<td>HTML5/Node/WebSocket imageboard</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -18,19 +18,14 @@
 
 ## Usage
 
-smog is started at http://localhost:8080
-
 ```
-$ npm install smog -g
-$ smog
+coffee start.coffee
 ```
 
 
 ## Pictures
 
-![Dashboard](http://i.imgur.com/cOzGD.jpg)
-![Editing](http://i.imgur.com/pNihA.png)
-![Map Reduce](http://i.imgur.com/cWGvx.png)
+
 
 ## LICENSE
 

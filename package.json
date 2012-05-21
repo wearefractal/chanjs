@@ -1,22 +1,20 @@
 {
-   "name":"smog",
+   "name":"chanjs",
    "description":"HTML5/Node/WebSocket MongoDB viewer",
    "version":"0.0.4",
-   "homepage":"http://github.com/wearefractal/smog",
-   "repository":"git://github.com/wearefractal/smog.git",
+   "homepage":"http://github.com/wearefractal/chanjs",
+   "repository":"git://github.com/wearefractal/chanjs.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "bin":{
-      "smog":"./bin/smog"
+      "chanjs":"./bin/chanjs"
    },
    
    "dependencies":{
       "coffee-script":"*",
-      "mongodb":"*",
+      "redback":"*",
       "connect":"*",
-      "vein":"0.2.1",
-      "async":"*",
-      "mongo-ton":"*",
-      "uglify-js":"*"
+      "vein":"*",
+      "async":"*"
    },
    "devDependencies":{
       "mocha":"*",
@@ -34,7 +32,7 @@
    "licenses":[
       {
          "type":"MIT",
-         "url":"http://github.com/wearefractal/smog/raw/master/LICENSE"
+         "url":"http://github.com/wearefractal/chanjs/raw/master/LICENSE"
       }
    ]
 }

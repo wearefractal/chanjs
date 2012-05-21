@@ -1,5 +1,5 @@
 connect = require "connect"
-router = require "./lib/router"
+Vein = require "vein"
 {join} = require "path"
 
 # Web server
@@ -9,6 +9,7 @@ app.use connect.static join __dirname, './public/'
 server = app.listen process.env.PORT or 8080
 
 # Vein
-router.initialize server, join(__dirname, './lib/services/'), (err) ->
-  return console.log err if err?
-  console.log "Server started on 8080"
+vein = new Vein server
+vein.addFolder join __dirname, './lib/services/'
+
+console.log "Server started on 8080"

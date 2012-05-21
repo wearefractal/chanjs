@@ -15,10 +15,9 @@
       <link href="css/ext/bootstrap-responsive.css" rel="stylesheet" />
       <link href="css/styles.css" rel="stylesheet" />
 
-      <script src="js/ext/require.js"></script>
+      <script src="js/ext/dermis.js"></script>
       <script src="js/ext/vein.js"></script>
       <script src="js/ext/jquery.js"></script>
-      <script src="js/ext/jquery.routes.js"></script>
       <script src="js/ext/jquery.noty.js"></script>
       <script src="js/ext/bootstrap.js"></script>
       <script>
@@ -26,21 +25,21 @@
            baseUrl: ".",
            packages: [
              { name: "templates", location: "templates"},
-             { name: "smog", location: "js" },
+             { name: "chan", location: "js" },
              { name: "routes", location: "js/routes" },
-             { name: "ext", location: "js/ext" },
-             { name: "ace", location: "js/ext/ace"}
+             { name: "ext", location: "js/ext" }
            ]
          },[
-           'smog/smog'
+           'chan/main'
          ]);
       </script>
    </head>
    <body>
       <div class="container-fluid">
          <div class="row-fluid">
-            <div id="sidebar" class="span2 row-fluid"></div>
+            <div class="span1"></div>
             <div id="content" class="span10 row-fluid"></div>
+            <div class="span1"></div>
          </div>
       </div>
    </body>
