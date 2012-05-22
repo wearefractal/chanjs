@@ -1,6 +1,6 @@
 {
    "name":"chanjs",
-   "description":"HTML5/Node/WebSocket MongoDB viewer",
+   "description":"HTML5/Node/WebSocket ImageBoard",
    "version":"0.0.4",
    "homepage":"http://github.com/wearefractal/chanjs",
    "repository":"git://github.com/wearefractal/chanjs.git",

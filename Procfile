@@ -1,1 +1,1 @@
-web: node ./bin/smog
+web: node ./bin/chanjs
