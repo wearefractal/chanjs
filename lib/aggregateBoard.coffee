@@ -17,4 +17,4 @@ module.exports = (id, page, cb) ->
 
       async.forEach threads, aggregate, (err) ->
         return cb err if err?
-        cb null, threads
+        cb null, board: board, threads: threads

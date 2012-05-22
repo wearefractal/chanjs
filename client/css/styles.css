@@ -15,9 +15,35 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  background: #0F0F1A;
+  border: 1px solid #404040;
+  color: #EEE;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
+input {
+  background: #0F0F1A;
+  border: 1px solid #404040;
+  color: #EEE;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+
 .well {
   background-color: #2A2A2A;
 }
+
+.center {
+  right: 50%;
+  left: 50%;
+  float: left;
+  position: relative;
+}
+
 #content {
  margin: 0 auto;
  float: none;

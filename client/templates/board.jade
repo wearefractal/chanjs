@@ -1,4 +1,8 @@
 .well
+  .page-header: h1 #{board.name}
+  .row-fluid
+    center: #reply
+
   .row-fluid
     each thread in threads
       .thread(id="#{thread._id}")
