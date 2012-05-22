@@ -3,7 +3,6 @@
 
   define(function() {
     return function(_, templ) {
-      console.log(templ);
       return $("#content").html(templ());
     };
   });

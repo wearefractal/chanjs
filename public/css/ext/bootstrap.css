@@ -7,18 +7,6 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
- @font-face {
-  font-family: 'Droid Sans';
-  font-style: normal;
-  font-weight: bold;
-  src: url('DroidSans-Bold.ttf');
-}
-@font-face {
-  font-family: 'Droid Sans';
-  font-style: normal;
-  font-weight: normal;
-  src: url('DroidSans.ttf');
-}
 article,
 aside,
 details,
@@ -143,12 +131,13 @@ textarea {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  font-family: 'Droid Sans', sans-serif;
-  font-size: 13px;
   line-height: 18px;
   color: #999999;
   background-color: #060606;
+  padding-bottom: 10px;
+  margin: 8px;
+  font-family: Helvetica,Trebuchet,serif;
+  font-size: 12px;
 }
 a {
   color: #33b5e5;
@@ -334,7 +323,6 @@ a:hover {
 }
 p {
   margin: 0 0 9px;
-  font-family: 'Droid Sans', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -1195,8 +1183,6 @@ legend + .control-group {
 }
 table {
   max-width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
   background-color: transparent;
 }
 .table {

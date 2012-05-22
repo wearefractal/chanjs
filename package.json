@@ -12,6 +12,7 @@
    "dependencies":{
       "coffee-script":"*",
       "redback":"*",
+      "mongoose":"*",
       "connect":"*",
       "vein":"*",
       "async":"*"

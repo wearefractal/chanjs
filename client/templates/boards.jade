@@ -1,0 +1,10 @@
+.well
+  .page-header: h1 Boards
+
+  .row-fluid
+    table.span3.table.table-condensed
+      tbody
+        each board in boards
+          tr
+            td 
+              a(href="#/board/#{board.id}") #{board.name}

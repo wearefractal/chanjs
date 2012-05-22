@@ -2,11 +2,8 @@
 (function() {
 
   define(["chan/server", "chan/routes", "chan/notify"], function(server, routes, notify) {
-    server.ready(function(services) {
+    return server.ready(function(services) {
       return console.log("Connected - Available services: " + services);
-    });
-    return server.close(function() {
-      return notify.error('Connection lost - reload to re-establish');
     });
   });
 

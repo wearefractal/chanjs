@@ -1,11 +1,84 @@
 body {
   background-image: url('../img/bg6.jpg');
-  padding-bottom: 10px;
-  margin: 8px;
-  overflow: hidden;
 }
-code {
-  color: black;
+
+blockquote {
+  font-size: 13px;
+  margin: 6px 15px 6px;
+  border-left: none;
+  border-color: none;
+}
+
+a {
+  border: none;
+  color: #40D040;
+  text-decoration: none;
+}
+
+.well {
+  background-color: #2A2A2A;
+}
+#content {
+ margin: 0 auto;
+ float: none;
+ border-radius: 6px;
+ -webkit-border-radius: 6px;
+ -moz-border-radius: 6px;
+}
+
+.thread {
+  color: #D0D0D0;
+  padding: 2px;
+  padding-bottom: 3px;
+  margin: 4px 0;
+  overflow: hidden
+}
+
+.post {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  moz-border-radius: 3px;
+  background: #404040;
+  color: #D0D0D0;
+  padding: 0;
+  padding-bottom: 3px;
+}
+
+.post .posthead {
+  color: #AAA;
+  background: #3A3A3C;
+  padding-right: 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.author {
+  color: #40AA80;
+  font-weight: 800;
+  margin-left: 5px;
+}
+
+.title {
+  color: #D0CC40;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px black;
+}
+
+.reflink a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.thumb {
+  border: medium none;
+  float: left;
+  margin: 0px 15px 8px;
 }
 
 .small-modal {

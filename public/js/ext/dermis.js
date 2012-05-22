@@ -2221,7 +2221,7 @@ var requirejs, require, define;
     var route;
     route = function(url, service, view) {
       var base, _ref, _ref1;
-      base = (url === '/' ? 'index' : ((_ref = /\/(.*)\//.exec(url)) != null ? _ref[1] : void 0) || ((_ref1 = /\/(.*)/.exec(url)) != null ? _ref1[1] : void 0));
+      base = (url === '/' ? 'index' : ((_ref = /\/(.*?)\//.exec(url)) != null ? _ref[1] : void 0) || ((_ref1 = /\/(.*)/.exec(url)) != null ? _ref1[1] : void 0));
       if (service == null) {
         service = "routes/" + base;
       }

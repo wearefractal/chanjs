@@ -1,4 +1,6 @@
 connect = require "connect"
+redis = require "./lib/redis"
+mongo = require "./lib/mongo"
 Vein = require "vein"
 {join} = require "path"
 
