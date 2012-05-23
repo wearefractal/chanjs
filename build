@@ -20,4 +20,9 @@ cp -R ./client/js/ext/* ./public/js/ext
 cp -R ./client/css/* ./public/css
 cp -R ./client/img/* ./public/img
 
+# Wire public img folder to private location
+rm -rf ./store
+mkdir ./store
+touch ./store/index.html
+
 echo "Build completed!"

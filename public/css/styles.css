@@ -35,17 +35,10 @@ input {
   background-color: #2A2A2A;
 }
 
-.center {
-  right: 50%;
-  left: 50%;
-  float: left;
-  position: relative;
-}
-
-#content {
- margin: 0 auto;
- float: none;
- border-radius: 6px;
+.content-center {
+  margin: 0 auto;
+  float: none;
+  border-radius: 6px;
 }
 
 .thread {

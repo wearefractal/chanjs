@@ -1,0 +1,32 @@
+#threadReply
+.thread(id="#{_id}")
+  - original.createdPretty = prettyDate(original.created)
+  .op(id="#{original._id}")
+    .posthead
+      if original.title
+        span.title #{original.title}
+      span.author #{original.author} - 
+      span.reflink: a(href="#/post/#{original._id}") #{original._id} - 
+      span: a(href="#/thread/#{_id}") Reply
+      span  - #{original.createdPretty}
+    .postbody
+      if original.image
+        a(href="#{original.image}"): img.thumb(src="#{original.image}-thumb")
+      blockquote.postmessage #{original.text}
+
+  each post in replies
+    - post.createdPretty = prettyDate(post.created)
+    table(id="#{post._id}")
+      tbody
+        tr
+          td.post
+            .posthead
+              if post.title
+                span.title #{post.title}
+              span.author #{post.author} - 
+              span.reflink: a(href="#/post/#{post._id}") #{post._id} - 
+              span Posted: #{post.createdPretty}
+            .postbody
+              if post.image
+                a(href="#{post.image}"): img.thumb(src="#{post.image}-thumb")
+            blockquote.postmessage #{post.text}

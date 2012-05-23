@@ -4,35 +4,4 @@
     center: #reply
 
   .row-fluid
-    each thread in threads
-      .thread(id="#{thread._id}")
-
-        - thread.original.createdPretty = prettyDate(thread.original.created)
-        .op
-          .posthead
-            if thread.original.title
-              span.title #{thread.original.title}
-            span.author #{thread.original.author} - 
-            span.reflink: a(href="#/thread/#{thread._id}") #{thread._id} - 
-            span #{thread.original.createdPretty}
-          .postbody
-            if thread.original.image
-              img.thumb(src="#{thread.original.image}")
-            blockquote.postmessage #{thread.original.text}
-
-        each post in thread.replies
-          - post.createdPretty = prettyDate(post.created)
-          table(id="#{post._id}")
-            tbody
-              tr
-                td.post
-                  .posthead
-                    if post.title
-                      span.title #{post.title}
-                    span.author #{post.author} - 
-                    span.reflink: a(href="#/post/#{post._id}") #{post._id} - 
-                    span Posted: #{post.createdPretty}
-                  .postbody
-                    if post.image
-                      img.thumb(src="#{post.image}")
-                    blockquote.postmessage #{post.text}
+    #threadview

@@ -2,7 +2,6 @@ db = require 'mongoose'
 {Schema} = db
 
 post = new Schema
-  title: String
   author:
     type: String
     required: true
@@ -14,6 +13,7 @@ post = new Schema
     default: Date.now
 
   image: String
+  title: String
   text: String
 
   thread:
