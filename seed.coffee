@@ -5,6 +5,10 @@ Thread = mongo.model 'Thread'
 Post = mongo.model 'Post'
 
 boards = [
+  name: 'Random'
+  id: 'b'
+  category: 'Misc.'
+,
   name: 'Video Games'
   id: 'v'
   category: 'Interests'
@@ -52,15 +56,20 @@ boards = [
 
 threads = []
 threads.push [
-    title: 'so high i can fly'
-    text: 'so twisted rite now idonteven'
+    image: 'http://boards.420chan.org/b/thumb/1337648245849s.jpg'
+    title: 'i believe i can fly'
+    text: 'so high i could touch the sky'
   ,
-    text: 'op is a faggot'
+    text: 'op is a [jolly good fella]'
+  ,
+    image: 'http://boards.420chan.org/b/thumb/1337733880451s.jpg'
+    text: 'You’ve got to be kidding me. I’ve been further even more decided to use even go need to do look more as anyone can. Can you really be far even as decided half as much to use go wish for that? My guess is that when one really been far even as decided once to use even go want, it is then that he has really been far even as decided to use even go want to do look more like. It’s just common sense.'
   ,
     author: 'sage'
     text: 'sage goes in all fields sage goes in all fields sage goes in all fields sage goes in all fields'
   ,
-    text: 'i am disappoint'
+    image: 'http://boards.420chan.org/weed/thumb/1337733093829s.jpg'
+    text: 'no'
 ]
 
 
