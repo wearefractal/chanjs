@@ -19,6 +19,7 @@ textarea {
   background: #0F0F1A;
   border: 1px solid #404040;
   color: #EEE;
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -28,6 +29,9 @@ input {
   background: #0F0F1A;
   border: 1px solid #404040;
   color: #EEE;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
@@ -38,6 +42,9 @@ input {
 .content-center {
   margin: 0 auto;
   float: none;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -46,10 +53,12 @@ input {
   padding: 2px;
   padding-bottom: 3px;
   margin: 4px 0;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .post {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   background: #404040;
   color: #D0D0D0;
@@ -85,8 +94,6 @@ input {
 }
 
 .thumb {
-  height: 150px;
-  width: 150px;
   float: left;
   margin: 0 15px 8px;
 }

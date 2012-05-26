@@ -7,7 +7,7 @@ module.exports = (req, res, {thread, author, title, text}, file) ->
   Thread.findById thread, (err, t) ->
     return res.end "Error querying thread: #{err}" if err?
     return res.end 'Invalid thread' unless t?
-    transformImage file, (err, img) ->
+    transformImage file, 'reply', (err, img) ->
       return res.end "Error resizing image: #{err}" if err?
       Post.create
         title: title

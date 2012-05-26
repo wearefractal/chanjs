@@ -8,7 +8,7 @@ module.exports = (req, res, {board, author, title, text}, file) ->
   Board.findOne {id:board}, (err, b) ->
     return res.end "Error querying boards: #{err}" if err?
     return res.end 'Invalid board' unless b?
-    transformImage file, (err, img) ->
+    transformImage file, 'original', (err, img) ->
       return res.end "Error resizing image: #{err}" if err?
       Thread.create {board:b}, (err, nthread) ->
         return res.end "Error saving thread: #{err}" if err?
