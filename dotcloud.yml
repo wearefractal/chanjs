@@ -2,7 +2,7 @@ data:
   type: mongodb
 nodejs:
   type: custom
-  buildscript: builder
+  buildscript: build
   ports:
     www: http
   process: ./bin/chanjs
