@@ -1,39 +1,38 @@
 {
-   "name":"chanjs",
-   "description":"HTML5/Node/WebSocket ImageBoard",
-   "version":"0.0.4",
-   "homepage":"http://github.com/wearefractal/chanjs",
-   "repository":"git://github.com/wearefractal/chanjs.git",
-   "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
-   "bin":{
-      "chanjs":"./bin/chanjs"
-   },
-   
-   "dependencies":{
-      "coffee-script":"*",
-      "mongoose":"*",
-      "connect":"*",
-      "gm":"*",
-      "vein":"*",
-      "async":"*"
-   },
-   "devDependencies":{
-      "mocha":"*",
-      "should":"*",
-      "uglify-js":"*",
-      "jaded":"*",
-      "less":"*"
-   },
-   "scripts":{
-      "test":"mocha --compilers coffee:coffee-script"
-   },
-   "engines":{
-      "node":">= 0.4.0"
-   },
-   "licenses":[
-      {
-         "type":"MIT",
-         "url":"http://github.com/wearefractal/chanjs/raw/master/LICENSE"
-      }
-   ]
+  "name": "chanjs",
+  "description": "HTML5/Node/WebSocket ImageBoard",
+  "version": "0.0.1",
+  "homepage": "http://github.com/wearefractal/chanjs",
+  "repository": "git://github.com/wearefractal/chanjs.git",
+  "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
+  "bin": {
+    "chanjs": "./bin/chanjs"
+  },
+  "dependencies": {
+    "coffee-script": "*",
+    "mongoose": "*",
+    "connect": "*",
+    "gm": "*",
+    "vein": "*",
+    "async": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "uglify-js": "*",
+    "jaded": "*",
+    "less": "*"
+  },
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/wearefractal/chanjs/raw/master/LICENSE"
+    }
+  ]
 }

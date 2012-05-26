@@ -1,3 +1,6 @@
+try
+  dotcloud = require('./environment.json').DOTCLOUD_DATA_MONGODB_URL
+
 module.exports =
   images:
     location: __dirname + '/store/'
@@ -10,4 +13,4 @@ module.exports =
         height: 150
         width: 150
   mongo:
-    host: "mongodb://localhost:27017/chanjs"
+    host: dotcloud or "mongodb://localhost:27017/chanjs"
