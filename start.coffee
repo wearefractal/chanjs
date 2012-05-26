@@ -18,7 +18,7 @@ app.use connect.multipart
   keepExtensions: true
 app.use postReply
 
-server = app.listen process.env.PORT or 8080
+server = app.listen config.app.port
 
 # Vein
 vein = new Vein server

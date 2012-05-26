@@ -2,6 +2,8 @@ try
   dotcloud = require('./environment.json').DOTCLOUD_DATA_MONGODB_URL
 
 module.exports =
+  app:
+    port: process.env.PORT_WWW or process.env.PORT or 8080
   images:
     location: __dirname + '/store/'
     maxsize: '3mb'
