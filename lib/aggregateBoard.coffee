@@ -6,6 +6,7 @@ async = require 'async'
 module.exports = (id, page, cb) ->
   Board.findOne {id: id}, (err, board) ->
     return cb err if err?
+    return cb "No board found" unless board?
     board.threads page, (err, threads) ->
       return cb err if err?
       aggregate = (thread, cb) ->

@@ -85,7 +85,8 @@ input {
 }
 
 .thumb {
-  border: medium none;
+  height: 150px;
+  width: 150px;
   float: left;
   margin: 0 15px 8px;
 }

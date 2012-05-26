@@ -1,12 +1,13 @@
 config = require '../config'
+postToThread = require './postToThread'
 postToBoard = require './postToBoard'
 
 module.exports = (req, res, next) ->
   return next() unless req.files?.file?
   {file} = req.files
-  return res.send 'File too large' if file.size > config.images.full.size
+  return res.end "Invalid file type - only images are allowed." unless file.type.indexOf('image/') is 0
   if req.body?.thread?
-    replyToThread req, res, req.body, file
+    postToThread req, res, req.body, file
   else if req.body?.board?
     postToBoard req, res, req.body, file
   else res.end 'Invalid upload'
