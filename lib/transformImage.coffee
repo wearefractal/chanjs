@@ -4,6 +4,7 @@ config = require '../config'
 
 module.exports = (file, type, cb) ->
   return cb null, null unless file? and file.path and file.size isnt 0
+  return res.end "Invalid file type - only images are allowed." unless file.mime.indexOf('image/') is 0
   rule = config.images.thumbnails[type]
   npath = "#{file.path}-thumb"
 
