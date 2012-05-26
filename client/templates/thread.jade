@@ -1,6 +1,6 @@
 #threadReply
+
 .thread(id="#{_id}")
-  - original.createdPretty = prettyDate(original.created)
   .op(id="#{original._id}")
     .posthead
       if original.title
@@ -11,14 +11,13 @@
       |  - 
       span: a(href="#/thread/#{_id}") Reply
       |  - 
-      span #{original.createdPretty}
+      span #{prettyDate(original.created)}
     .postbody
       if original.image
         a(href="#{original.image}"): img.thumb(src="#{original.image}-thumb")
-      blockquote.postmessage #{original.text}
+      p.postmessage #{original.text}
 
   each post in replies
-    - post.createdPretty = prettyDate(post.created)
     table(id="#{post._id}")
       tbody
         tr
@@ -30,8 +29,8 @@
               |  - 
               span.reflink: a(href="#/post/#{post._id}") #{post._id}
               |  - 
-              span #{post.createdPretty}
+              span #{prettyDate(post.created)}
             .postbody
               if post.image
                 a(href="#{post.image}"): img.thumb(src="#{post.image}-thumb")
-            blockquote.postmessage #{post.text}
+              p.postmessage #{post.text}

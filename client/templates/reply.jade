@@ -1,8 +1,5 @@
 form(action="/post", enctype="multipart/form-data", method="post")
-  if board
-    input(name="board", type="hidden", value="#{board}")
-  else if thread
-    input(name="thread", type="hidden", value="#{thread}")
+  input(name="#{type}", type="hidden", value="#{id}")
   table
     tbody
       tr

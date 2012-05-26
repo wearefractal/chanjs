@@ -1,4 +1,10 @@
 .well
-  .page-header: h1 Index
+  .page-header: h1 Boards
 
-  a(href="#/boards") Click here to go to the boards
+  .row-fluid
+    table.span3.table.table-condensed
+      tbody
+        each board in boards
+          tr
+            td 
+              a(href="#/board/#{board.id}") #{board.name}

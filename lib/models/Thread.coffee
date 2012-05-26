@@ -22,6 +22,5 @@ thread = new Schema
 thread.methods.posts = (cb) ->
   Post = db.model 'Post'
   Post.find({thread: @_id}).asc('created').exec cb
-  return
 
 module.exports = thread

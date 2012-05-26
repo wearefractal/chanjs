@@ -5,5 +5,5 @@ define ["chan/server", "chan/notify", "templates/thread", "templates/reply"], (s
       server.board id, page, (err, {board, threads}) ->
         return notify.error "Error grabbing threads: #{err}" if err?
         $("#content").html templ board: board
-        $('#reply').html reply board: id
+        $('#reply').html reply type: 'board', id: id
         $('#threadview').append thread t for t in threads
