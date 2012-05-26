@@ -23,8 +23,20 @@ coffee start.coffee
 ```
 
 
-## Pictures
+## TODO
 
+```
+Pagination on board view
+Limit to first 10 replies to thread on board view
+Image upload via ajax to avoid full refresh
+HTML5 pushstate/history API to fix navigation
+Thread pubsub
+Inline image viewer on hover
+Switch post text back to blockquote when jade is patched
+Greentext
+Easy way to do censored words
+Spoiler tags (maybe)
+```
 
 
 ## LICENSE
