@@ -1,7 +1,10 @@
 data:
   type: mongodb
-www:
-  type: nodejs
-  approot: .
+node:
+  type: custom
   buildscript: build
+  ports:
+    www: http
+  process: ./bin/chanjs
+  approot: .
   node_version: v0.6.18
