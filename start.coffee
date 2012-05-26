@@ -24,4 +24,5 @@ server = app.listen config.app.port
 vein = new Vein server
 vein.addFolder __dirname + '/lib/services/'
 
-console.log "Server started on 8080"
+console.log "Server started on #{config.app.port}"
+console.log "Using database #{config.mongo.host}"
