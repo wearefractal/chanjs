@@ -3,6 +3,7 @@ Vein = require "vein"
 mongo = require "./lib/mongo"
 postReply = require "./lib/postReply"
 config = require './config'
+require "./seed"
 
 # Web server
 app = connect()

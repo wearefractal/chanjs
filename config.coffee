@@ -15,4 +15,4 @@ module.exports =
         height: 150
         width: 150
   mongo:
-    host: dotcloud or "mongodb://localhost:27017/chanjs"
+    host: (if dotcloud then "#{dotcloud}/chanjs" else "mongodb://localhost:27017/chanjs")
