@@ -58,4 +58,4 @@ createBoard = (board, cb) ->
 async.forEach boards, createBoard, (err) ->
   console.log err if err?
   console.log 'Done'
-  process.exit()
+  #process.exit()

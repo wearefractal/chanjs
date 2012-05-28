@@ -11,7 +11,7 @@
     .postbody
       if original.image
         a(href="#{original.image}"): img.thumb(src="#{original.image}-thumb")
-      p.postmessage #{original.text}
+      blockquote.postmessage #{original.text}
 
   each post in replies
     table(id="#{post._id}")
@@ -29,4 +29,4 @@
             .postbody
               if post.image
                 a(href="#{post.image}"): img.thumb(src="#{post.image}-thumb")
-              p.postmessage #{post.text}
+              blockquote.postmessage #{post.text}
