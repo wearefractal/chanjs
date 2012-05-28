@@ -4,7 +4,7 @@ try
 
 module.exports =
   app:
-    port: process.env.PORT or 8080
+    port: process.env.VCAP_APP_PORT or process.env.PORT or 8080
   images:
     location: __dirname + '/store/'
     maxsize: '3mb'

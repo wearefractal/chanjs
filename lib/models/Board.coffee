@@ -7,6 +7,7 @@ board = new Schema
     required: true
     index:
       unique: true
+      dropDups: true
 
   name:
     type: String
