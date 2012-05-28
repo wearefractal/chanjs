@@ -53,7 +53,8 @@ boards = [
 ]
 
 createBoard = (board, cb) ->
-  Board.create board, -> cb()
+  try
+    Board.create board, -> cb()
 
 async.forEach boards, createBoard, (err) ->
   console.log err if err?
