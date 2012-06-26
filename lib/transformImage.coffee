@@ -1,23 +1,26 @@
-gm = require 'gm'
+{Image} = Canvas = require 'canvas'
 config = require '../config'
 {basename} = require 'path'
+{readFile} = require 'fs'
 
 module.exports = (file, type, cb) ->
-  return cb null, null unless file? and file.path and file.size isnt 0
+  return cb() unless file? and file.path and file.size isnt 0
   return res.end "Invalid file type - only images are allowed." unless file.mime.indexOf('image/') is 0
   rule = config.images.thumbnails[type]
-  npath = "#{file.path}-thumb"
 
   # semi-proportional resize
-  gm(file.path).size (err, size) ->
+  readFile file.path, (err, imgsrc) ->
     return cb err if err?
-    ratio = size.width/size.height
-    nheight = size.width/ratio
-    nwidth = size.height/ratio
+    img = new Image
+    img.onerror = cb
+    img.onload = ->
+      ratio = img.width/img.height
+      height = img.height/ratio
+      width = img.width/ratio
 
-    gm(file.path)
-    .resize(nheight, nwidth)
-    .noProfile()
-    .write npath, (err) ->
-      return cb err if err?
-      cb null, basename file.path #npath
+      canvas = new Canvas width, height
+      ctx = canvas.getContext '2d'
+      ctx.drawImage img, 0, 0, width, height
+      canvas.toDataURL (err, uri) ->
+        cb err, uri, basename file.path
+    img.src = imgsrc

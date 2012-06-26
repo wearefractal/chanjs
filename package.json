@@ -9,7 +9,7 @@
     "coffee-script": "*",
     "mongoose": "*",
     "connect": "*",
-    "gm": "*",
+    "canvas": "*",
     "vein": "*",
     "async": "*"
   },

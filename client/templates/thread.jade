@@ -9,8 +9,8 @@
       |  - 
       span #{prettyDate(original.created)}
     .postbody
-      if original.image
-        a(href="#{original.image}"): img.thumb(src="#{original.image}-thumb")
+      if original.image && original.thumbnail
+        a(href="#{original.image}"): img.thumb(src="#{original.thumbnail}")
       blockquote.postmessage #{original.text}
 
   each post in replies
@@ -27,6 +27,6 @@
               |  - 
               span #{prettyDate(post.created)}
             .postbody
-              if post.image
-                a(href="#{post.image}"): img.thumb(src="#{post.image}-thumb")
+              if post.image && post.thumbnail
+                a(href="#{post.image}"): img.thumb(src="#{post.thumbnail}")
               blockquote.postmessage #{post.text}

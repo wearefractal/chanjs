@@ -2,9 +2,7 @@
 (function() {
 
   define(["ext/vein"], function(Vein) {
-    return new Vein({
-      transports: ["polling"]
-    });
+    return new Vein;
   });
 
 }).call(this);
