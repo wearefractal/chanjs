@@ -20,6 +20,12 @@
             type: 'board',
             id: id
           }));
+          $("#replyForm").ajaxForm({
+            dataType: 'json',
+            success: function(data) {
+              return rooter.hash.value("#/thread/" + data.thread);
+            }
+          });
           _results = [];
           for (_i = 0, _len = threads.length; _i < _len; _i++) {
             t = threads[_i];

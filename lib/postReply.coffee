@@ -3,7 +3,7 @@ postToThread = require './postToThread'
 postToBoard = require './postToBoard'
 
 module.exports = (req, res, next) ->
-  return next() unless req.files?.file?
+  return next() unless req.files?
   {file} = req.files
   if req.body?.thread?
     postToThread req, res, req.body, file

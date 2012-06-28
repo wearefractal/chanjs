@@ -1,10 +1,6 @@
-try
-  mongo = JSON.parse(process.env.VCAP_SERVICES)["mongodb-1.8"][0]["credentials"]
-  appfog = "mongodb://#{mongo.username}:#{mongo.password}@#{mongo.hostname}:#{mongo.port}/#{mongo.db}"
-
 module.exports =
   app:
-    port: process.env.VCAP_APP_PORT or process.env.PORT or 8080
+    port: process.env.PORT or 8080
   images:
     location: __dirname + '/store/'
     maxsize: '3mb'
@@ -16,4 +12,4 @@ module.exports =
         height: 150
         width: 150
   mongo:
-    host: appfog or "mongodb://localhost:27017/chanjs"
+    host: (if process.env.NODE_ENV is 'production' then 'mongodb://nodejitsu:1d4fb321f6375e4882f107c4d69f61d8@staff.mongohq.com:10036/nodejitsudb851707505678' else "mongodb://localhost:27017/chanjs")

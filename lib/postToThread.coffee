@@ -18,6 +18,8 @@ module.exports = (req, res, {thread, author, title, text}, file) ->
         image: img
       , (err, p) ->
         return res.end "Error saving post: #{err}" if err?
-        res.statusCode = 301
-        res.setHeader 'Location', "/#/thread/#{t._id}/#{p._id}"
-        return res.end()
+        res.statusCode = 200
+        res.setHeader 'Content-Type', 'application/json'
+        return res.end JSON.stringify
+          thread: t._id
+          post: p._id

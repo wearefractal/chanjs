@@ -19,6 +19,12 @@
             type: 'thread',
             id: id
           }));
+          $("#replyForm").ajaxForm({
+            dataType: 'json',
+            success: function(data) {
+              return rooter.hash.value("#/thread/" + data.thread + "/" + data.post);
+            }
+          });
           $("#threadview").html(templ(thread));
           if (post != null) {
             return scroll(0, $("#" + post).position().top);

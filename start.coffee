@@ -7,7 +7,7 @@ require "./seed"
 
 # Web server
 app = connect()
-app.use connect.responseTime()
+#app.use connect.responseTime()
 app.use connect.favicon()
 app.use connect.limit config.images.maxsize
 app.use connect.staticCache()

@@ -6,4 +6,7 @@ define ["chan/server", "chan/notify", "templates/thread", "templates/reply"], (s
         return notify.error "Error grabbing threads: #{err}" if err?
         $("#content").html templ board: board
         $('#reply').html reply type: 'board', id: id
+        $("#replyForm").ajaxForm
+          dataType: 'json'
+          success: (data) -> rooter.hash.value "#/thread/#{data.thread}"
         $('#threadview').append thread t for t in threads
