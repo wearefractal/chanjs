@@ -10,3 +10,4 @@ define ["chan/server", "chan/notify", "templates/thread", "templates/reply"], (s
           dataType: 'json'
           success: (data) -> rooter.hash.value "#/thread/#{data.thread}"
         $('#threadview').append thread t for t in threads
+        #$('.lazy').jail effect: 'fadeIn'

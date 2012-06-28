@@ -4,13 +4,15 @@
       if original.title
         span.title #{original.title}
       span.author #{original.author}
-      | - 
+      |  - 
       span.reflink: a(href="#/thread/#{_id}/#{original._id}") Reply
       |  - 
       span #{prettyDate(original.created)}
     .postbody
       if original.image && original.thumbnail
-        a(href="#{original.image}"): img.thumb(src="#{original.thumbnail}")
+        a(href="#{original.image}")
+          img.thumb.lazy(src="#{original.thumbnail}")
+          noscript: img.thumb(src="#{original.thumbnail}")
       blockquote.postmessage #{original.text}
 
   each post in replies
@@ -28,5 +30,7 @@
               span #{prettyDate(post.created)}
             .postbody
               if post.image && post.thumbnail
-                a(href="#{post.image}"): img.thumb(src="#{post.thumbnail}")
+                a(href="#{post.image}")
+                  img.thumb.lazy(src="#{post.thumbnail}")
+                  noscript: img.thumb(src="#{post.thumbnail}")
               blockquote.postmessage #{post.text}

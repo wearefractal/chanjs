@@ -9,4 +9,5 @@ define ["chan/server", "chan/notify", "templates/board", "templates/reply"], (se
           dataType: 'json'
           success: (data) -> rooter.hash.value "#/thread/#{data.thread}/#{data.post}"
         $("#threadview").html templ thread
+        #$('.lazy').jail effect: 'fadeIn'
         scroll(0, $("##{post}").position().top) if post?

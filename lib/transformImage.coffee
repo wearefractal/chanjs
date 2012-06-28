@@ -15,8 +15,11 @@ module.exports = (file, type, cb) ->
     img.onerror = cb
     img.onload = ->
       ratio = img.width/img.height
-      height = img.height/ratio
-      width = img.width/ratio
+      height = img.height
+      width = img.width
+      while height > rule.height or width > rule.width
+        height = height/ratio
+        width = width/ratio
 
       canvas = new Canvas width, height
       ctx = canvas.getContext '2d'
