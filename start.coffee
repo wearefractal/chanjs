@@ -22,8 +22,8 @@ app.use postReply
 server = app.listen config.app.port
 
 # Vein
-vein = new Vein server
-vein.addFolder __dirname + '/lib/services/'
+global.vein = new Vein server
+global.vein.addFolder __dirname + '/lib/services/'
 
 console.log "Server started on #{config.app.port}"
 console.log "Using database #{config.mongo.host}"
