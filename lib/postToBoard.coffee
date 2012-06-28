@@ -3,6 +3,7 @@ Board = db.model 'Board'
 Thread = db.model 'Thread'
 Post = db.model 'Post'
 transformImage = require './transformImage'
+{publish} = require './services/newPost'
 
 module.exports = (req, res, {board, author, title, text}, file) ->
   Board.findOne {id:board}, (err, b) ->
@@ -23,5 +24,7 @@ module.exports = (req, res, {board, author, title, text}, file) ->
           return res.end "Error saving post: #{err}" if err?
           res.statusCode = 200
           res.setHeader 'Content-Type', 'application/json'
-          return res.end JSON.stringify
+
+          res.end JSON.stringify
             thread: nthread._id
+          publish nthread

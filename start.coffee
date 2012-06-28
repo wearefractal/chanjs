@@ -9,7 +9,7 @@ require "./seed"
 app = connect()
 #app.use connect.responseTime()
 app.use connect.favicon()
-app.use connect.limit config.images.maxsize
+#app.use connect.limit config.images.maxsize
 app.use connect.staticCache()
 app.use connect.static __dirname + '/public/'
 app.use connect.static config.images.location
@@ -22,8 +22,8 @@ app.use postReply
 server = app.listen config.app.port
 
 # Vein
-vein = new Vein server
-vein.addFolder __dirname + '/lib/services/'
+global.vein = new Vein server
+global.vein.addFolder __dirname + '/lib/services/'
 
 console.log "Server started on #{config.app.port}"
 console.log "Using database #{config.mongo.host}"

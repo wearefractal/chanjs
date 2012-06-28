@@ -2,6 +2,7 @@ db = require 'mongoose'
 Thread = db.model 'Thread'
 Post = db.model 'Post'
 transformImage = require './transformImage'
+{publish} = require './services/newPost'
 
 module.exports = (req, res, {thread, author, title, text}, file) ->
   Thread.findById thread, (err, t) ->
@@ -20,6 +21,7 @@ module.exports = (req, res, {thread, author, title, text}, file) ->
         return res.end "Error saving post: #{err}" if err?
         res.statusCode = 200
         res.setHeader 'Content-Type', 'application/json'
-        return res.end JSON.stringify
+        res.end JSON.stringify
           thread: t._id
           post: p._id
+        publish t, p
