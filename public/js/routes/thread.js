@@ -20,18 +20,26 @@
             id: id
           }));
           $("#replyForm").ajaxForm({
-            dataType: 'json'
+            dataType: 'json',
+            error: function(req, err, erra) {
+              return notify.error(req.responseText);
+            }
           });
           $("#threadview").html(templ(thread));
           if (post != null) {
-            scroll(0, $("#" + post).position().top);
+            $('html,body').animate({
+              scrollTop: $("#" + post._id).offset().top
+            }, 1000);
           }
           return server.subscribe.newPost(function(nthread, post) {
             if (nthread._id !== thread._id) {
               return;
             }
             nthread.post = post;
-            return $("#" + nthread._id).append(postTempl(nthread));
+            $("#" + nthread._id).append(postTempl(nthread));
+            return $('html,body').animate({
+              scrollTop: $("#" + post._id).offset().top
+            }, 1000);
           });
         });
       });

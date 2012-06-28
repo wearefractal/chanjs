@@ -7,11 +7,18 @@ define ["chan/server", "chan/notify", "templates/board", "templates/reply", "tem
         $('#reply').html reply type: 'thread', id: id
         $("#replyForm").ajaxForm 
           dataType: 'json'
+          error: (req, err, erra) -> notify.error req.responseText
         $("#threadview").html templ thread
         #$('.lazy').jail effect: 'fadeIn'
-        scroll(0, $("##{post}").position().top) if post?
+        if post?
+          $('html,body').animate
+            scrollTop: $("##{post._id}").offset().top
+          , 1000
 
         server.subscribe.newPost (nthread, post) ->
           return unless nthread._id is thread._id
           nthread.post = post
           $("##{nthread._id}").append postTempl nthread
+          $('html,body').animate
+            scrollTop: $("##{post._id}").offset().top
+          , 1000

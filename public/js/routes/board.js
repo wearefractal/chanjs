@@ -22,6 +22,9 @@
           }));
           $("#replyForm").ajaxForm({
             dataType: 'json',
+            error: function(req, err, erra) {
+              return notify.error(req.responseText);
+            },
             success: function(data) {
               return rooter.hash.value("#/thread/" + data.thread);
             }

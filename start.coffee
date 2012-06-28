@@ -9,7 +9,7 @@ require "./seed"
 app = connect()
 #app.use connect.responseTime()
 app.use connect.favicon()
-app.use connect.limit config.images.maxsize
+#app.use connect.limit config.images.maxsize
 app.use connect.staticCache()
 app.use connect.static __dirname + '/public/'
 app.use connect.static config.images.location
