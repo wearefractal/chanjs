@@ -12,7 +12,7 @@ define ["chan/server", "chan/notify", "templates/board", "templates/reply", "tem
         #$('.lazy').jail effect: 'fadeIn'
         if post?
           $('html,body').animate
-            scrollTop: $("##{post._id}").offset().top
+            scrollTop: $("##{post._id}").offset()?.top
           , 1000
 
         server.subscribe.newPost (nthread, post) ->
@@ -20,5 +20,5 @@ define ["chan/server", "chan/notify", "templates/board", "templates/reply", "tem
           nthread.post = post
           $("##{nthread._id}").append postTempl nthread
           $('html,body').animate
-            scrollTop: $("##{post._id}").offset().top
+            scrollTop: $("##{post._id}").offset()?.top
           , 1000

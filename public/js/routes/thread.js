@@ -7,6 +7,7 @@
       id = _arg.id, post = _arg.post;
       return server.ready(function() {
         return server.thread(id, function(err, thread) {
+          var _ref;
           if (err != null) {
             return notify.error("Error grabbing thread: " + err);
           }
@@ -28,17 +29,18 @@
           $("#threadview").html(templ(thread));
           if (post != null) {
             $('html,body').animate({
-              scrollTop: $("#" + post._id).offset().top
+              scrollTop: (_ref = $("#" + post._id).offset()) != null ? _ref.top : void 0
             }, 1000);
           }
           return server.subscribe.newPost(function(nthread, post) {
+            var _ref1;
             if (nthread._id !== thread._id) {
               return;
             }
             nthread.post = post;
             $("#" + nthread._id).append(postTempl(nthread));
             return $('html,body').animate({
-              scrollTop: $("#" + post._id).offset().top
+              scrollTop: (_ref1 = $("#" + post._id).offset()) != null ? _ref1.top : void 0
             }, 1000);
           });
         });
