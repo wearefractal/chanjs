@@ -1,0 +1,15 @@
+.op(id="#{original._id}")
+  .posthead
+    if original.title
+      span.title #{original.title}
+    span.author #{original.author}
+    |  - 
+    span.reflink: a(href="#/thread/#{_id}/#{original._id}") Reply
+    |  - 
+    span #{prettyDate(original.created)}
+  .postbody
+    if original.image && original.thumbnail
+      a(href="#{original.image}")
+        img.thumb.lazy(src="#{original.thumbnail}")
+        noscript: img.thumb(src="#{original.thumbnail}")
+    blockquote.postmessage #{original.text}

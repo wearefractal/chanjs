@@ -1,0 +1,18 @@
+table(id="#{post._id}")
+  tbody
+    tr
+      td.post
+        .posthead
+          if post.title
+            span.title #{post.title}
+          span.author #{post.author}
+          |  - 
+          span.reflink: a(href="#/thread/#{_id}/#{post._id}") #{post._id}
+          |  - 
+          span #{prettyDate(post.created)}
+        .postbody
+          if post.image && post.thumbnail
+            a(href="#{post.image}")
+              img.thumb.lazy(src="#{post.thumbnail}")
+              noscript: img.thumb(src="#{post.thumbnail}")
+          blockquote.postmessage #{post.text}
