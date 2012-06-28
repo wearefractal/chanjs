@@ -1,14 +1,8 @@
-form#replyForm(action="/post", enctype="multipart/form-data", method="POST")
-  input(name="#{type}", type="hidden", value="#{id}")
-  table
-    tbody
-      tr
-        td
-          input.span4(name="title", type="text", placeholder="Title") 
-      tr
-        td
-         textarea.span4(name="text", rows="4", cols="50", placeholder="Content")
-      tr
-        td
-          input.span3.pull-left(name="file", type="file")
-          input.pull-right(type="submit", value="Submit Post")
+div
+  form#replyForm(action="/post", enctype="multipart/form-data", method="POST")  
+    input(name="#{type}", type="hidden", value="#{id}")
+    input.row-fluid(name="title", type="text", placeholder="Title") 
+    textarea.row-fluid(name="text", rows="4", cols="50", placeholder="Content")
+    .row-fluid
+      input.pull-left(name="file", type="file")
+      input.pull-right(type="submit", value="Submit Post")
