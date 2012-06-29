@@ -1,8 +1,11 @@
-include boardNav
 .well
-  .page-header: a(href="#/board/#{board.id}"): h1 #{board.name}
+  center 
+    a(href="#/board/#{board.id}")
+      h1(style="padding-bottom: 10px;") #{board.name}
   .row-fluid
     center: #reply
 
   .row-fluid
     #threadview
+
+include boardNav
