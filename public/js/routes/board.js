@@ -7,34 +7,40 @@
       id = _arg.id, page = _arg.page;
       page = (page ? parseInt(page) : 0);
       return server.ready(function() {
-        return server.board(id, page, function(err, _arg1) {
-          var board, t, threads, _i, _len, _results;
-          board = _arg1.board, threads = _arg1.threads;
+        return server.boards(function(err, boards) {
           if (err != null) {
-            return notify.error("Error grabbing threads: " + err);
+            return notify.error("Error grabbing boards: " + err);
           }
-          $("#content").html(templ({
-            board: board
-          }));
-          $('#reply').html(reply({
-            type: 'board',
-            id: id
-          }));
-          $("#replyForm").ajaxForm({
-            dataType: 'json',
-            error: function(req, err, erra) {
-              return notify.error(req.responseText);
-            },
-            success: function(data) {
-              return rooter.hash.value("#/thread/" + data.thread);
+          return server.board(id, page, function(err, _arg1) {
+            var board, t, threads, _i, _len, _results;
+            board = _arg1.board, threads = _arg1.threads;
+            if (err != null) {
+              return notify.error("Error grabbing threads: " + err);
             }
+            $("#content").html(templ({
+              board: board,
+              boards: boards
+            }));
+            $('#reply').html(reply({
+              type: 'board',
+              id: id
+            }));
+            $("#replyForm").ajaxForm({
+              dataType: 'json',
+              error: function(req, err, erra) {
+                return notify.error(req.responseText);
+              },
+              success: function(data) {
+                return rooter.hash.value("#/thread/" + data.thread);
+              }
+            });
+            _results = [];
+            for (_i = 0, _len = threads.length; _i < _len; _i++) {
+              t = threads[_i];
+              _results.push($('#threadview').append(thread(t)));
+            }
+            return _results;
           });
-          _results = [];
-          for (_i = 0, _len = threads.length; _i < _len; _i++) {
-            t = threads[_i];
-            _results.push($('#threadview').append(thread(t)));
-          }
-          return _results;
         });
       });
     };
